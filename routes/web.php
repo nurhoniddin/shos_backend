@@ -20,8 +20,3 @@ Route::get('/test', function () {
     return view('welcome');
 });
 
-Route::get('/test', function () {
-    return view('bye');
-});
-
-Route::resource('post',\App\Http\Controllers\PostController::class);
