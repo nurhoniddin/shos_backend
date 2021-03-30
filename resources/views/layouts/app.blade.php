@@ -42,7 +42,7 @@
             <li class="nav-item">
                 <form action="{{ route('logout') }}" method="post">
                     @csrf
-                    <button type="submit" class="btn btn-primary">Logout({{ Auth::user()->name }})</button>
+                    <button type="submit" class="btn btn-primary">Logout({{ Auth::user()->name ??  null }})</button>
                 </form>
             </li>
         </ul>
@@ -58,7 +58,7 @@
                 <div class="image">
                 </div>
                 <div class="info">
-                    <a href="{{ route('home') }}" class="d-block text-uppercase">{{ Auth::user()->name }}</a>
+                    <a href="{{ route('home') }}" class="d-block text-uppercase">{{ Auth::user()->name ?? null }}</a>
                 </div>
             </div>
             <!-- Sidebar Menu -->
