@@ -30,7 +30,7 @@
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <form action="{{ route('category.update',$category->id) }}">
+                                <form action="{{ route('category.update',$category->id) }}" method="post">
                                     @csrf
                                     @method('PUT')
                                     <input type="text" name="name_uz" value="{{ $category->name_uz }}" class="form-control">

@@ -81,7 +81,8 @@ class CategoryController extends Controller
     {
         $category->update($request->all());
 
-        return redirect()->back();
+        return redirect()->route('category.index')
+            ->with('success','Kategoriya O`zgartirildi');
     }
 
     /**
