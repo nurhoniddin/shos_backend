@@ -40,10 +40,9 @@
                                     <thead>
                                     <tr>
                                         <th style="width: 10px">#</th>
-                                        <th>Kategoriya name_uz</th>
-                                        <th>Kategoriya name_cyril</th>
-                                        <th>Kategoriya name_ru</th>
-                                        <th>Kategoriya name_en</th>
+                                        <th>Title</th>
+                                        <th>description</th>
+                                        <th>body</th>
                                         <th style="width: 100px">Action</th>
                                     </tr>
                                     </thead>
@@ -51,10 +50,9 @@
                                     @foreach($posts as $post)
                                         <tr>
                                             <td>{{ $post->id }}</td>
-                                            <td>{{ $post->name_uz }}</td>
-                                            <td>{{ $post->name_cyril }}</td>
-                                            <td>{{ $post->name_ru }}</td>
-                                            <td>{{ $post->name_en }}</td>
+                                            <td>{{ $post->title_uz }}</td>
+                                            <td>{{ $post->description_uz }}</td>
+                                            <td>{{ $post->body_uz }}</td>
                                             <td style="font-size: 20px">
                                                 <form action="{{ route('posts.destroy',$post->id) }}" method="post">
                                                     <a href="{{ route('posts.edit',$post->id) }}"><i class="fa fa-pen-square"></i></a>

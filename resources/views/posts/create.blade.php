@@ -28,26 +28,19 @@
                             <div class="card-header">
                                 <a class="btn btn-primary" href="{{ route('posts.index') }}">Bekor qilish</a>
                             </div>
-                            <div class="card-header">
-                                <div class="input-group mb-3">
-                                  <select class="custom-select" id="inputGroupSelect03" required="">
-                                    <option selected>kategoriya...</option>
-                                    @foreach($category as $categories)
-                                    <option value="{{ $categories->id }}">{{ $categories->name_uz }}</option>
-                                    @endforeach
-                                  </select>
-                                </div>
-                            </div>
-                            <div class="card-header">
-                                <div class="input-group mb-3">
-                                  <input type="file"name="image" class="form-control">
-                                </div>
-                            </div>
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <form action="{{ route('posts.store') }}" method="post">
+                                <form action="{{ route('posts.store') }}" method="post" enctype="multipart/form-data">
                                     @csrf
-
+<select class="custom-select" id="inputGroupSelect03" name="category_id" required="">
+<option selected>kategoriya...</option>
+@foreach($category as $categories)
+<option value="{{ $categories->id }}">{{ $categories->name_uz }}</option>
+@endforeach
+</select>
+<hr>
+<input type="file" name="image" class="form-control">
+<hr>
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#uz" role="tab" aria-controls="home" aria-selected="true">uz</a>
@@ -69,7 +62,7 @@
     <hr>
     <input type="text" name="description_uz" class="form-control" placeholder="qisqacha ma'lumot">
     <hr>
-    <input type="text"name="body_uz" class="form-control" placeholder="to'liq ma'lumot">
+    <textarea class="form-control" id="summary-ckeditor" name="body_uz"></textarea>
   </div>
   <div class="tab-pane fade" id="kiril" role="tabpanel" aria-labelledby="profile-tab">
     <input type="text" name="title_cyril" class="form-control" placeholder="nomi">
@@ -105,4 +98,5 @@
         </section>
         <!-- /.content -->
     </div>
+
 @endsection

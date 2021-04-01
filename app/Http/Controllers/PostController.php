@@ -15,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::paginate(1);
+        $posts = Post::paginate(10);
         return view('posts.index', compact('posts'));
     }
 
@@ -54,7 +54,13 @@ class PostController extends Controller
          $data->body_en  = $request->input('body_en');
          $data->category_id  = $request->input('category_id');
 
-         $data->image  = $request->input('image');
+         // $data->image  = $request->input('image');
+         $imagePath = request('image')->store('news','public');
+       // $img = Image::make(public_path("storage/{$imagePath}"))->fit(2200,850);
+       // $img->save();
+
+         // $image= new FileUpload();
+         $data->image = $imagePath;
 
          $data->save();
 
@@ -81,7 +87,8 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        $category = Category::all();
+        return view('posts.edit',compact('post','category'));
     }
 
     /**
@@ -93,7 +100,10 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $post->update($request->all());
+
+        return redirect()->route('posts.index')
+            ->with('success','Yangilik O`zgartirildi');
     }
 
     /**
@@ -104,6 +114,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return back()->with('error','Yangilik O`chirildi');
     }
 }
