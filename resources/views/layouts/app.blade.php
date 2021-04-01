@@ -75,6 +75,14 @@
                             </p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('posts.index') }}" class="nav-link">
+                            <i class="nav-icon far fa fa-list-ol"></i>
+                            <p>
+                                Yangiliklar
+                            </p>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->

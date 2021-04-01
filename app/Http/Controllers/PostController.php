@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -14,7 +15,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::paginate(1);
+        return view('posts.index', compact('posts'));
     }
 
     /**
@@ -24,7 +26,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        $category = Category::all();
+        return view('posts.create', compact('category'));
     }
 
     /**
@@ -35,7 +38,28 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $data = new Post();
+
+         $data->title_uz  = $request->input('title_uz');
+         $data->title_cyril  = $request->input('title_cyril');
+         $data->title_ru  = $request->input('title_ru');
+         $data->title_en  = $request->input('title_en');
+         $data->description_uz  = $request->input('description_uz');
+         $data->description_cyril  = $request->input('description_cyril');
+         $data->description_ru  = $request->input('description_ru');
+         $data->description_en  = $request->input('description_en');
+         $data->body_uz  = $request->input('body_uz');
+         $data->body_cyril  = $request->input('body_cyril');
+         $data->body_ru  = $request->input('body_ru');
+         $data->body_en  = $request->input('body_en');
+         $data->category_id  = $request->input('category_id');
+
+         $data->image  = $request->input('image');
+
+         $data->save();
+
+         return redirect()->route('posts.index')
+           ->with('success','Yangilik yaratildi');
     }
 
     /**

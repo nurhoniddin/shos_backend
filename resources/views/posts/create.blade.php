@@ -1,0 +1,108 @@
+@extends('layouts.app')
+
+@section('content')
+    <div class="content-wrapper" style="min-height: 1360.97px;">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Yangiliklar</h1>
+                    </div>
+                    {{--                    <div class="col-sm-6">--}}
+                    {{--                        <ol class="breadcrumb float-sm-right">--}}
+                    {{--                            <li class="breadcrumb-item"><a href="#">Home</a></li>--}}
+                    {{--                            <li class="breadcrumb-item active">Simple Tables</li>--}}
+                    {{--                        </ol>--}}
+                    {{--                    </div>--}}
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="btn btn-primary" href="{{ route('posts.index') }}">Bekor qilish</a>
+                            </div>
+                            <div class="card-header">
+                                <div class="input-group mb-3">
+                                  <select class="custom-select" id="inputGroupSelect03" required="">
+                                    <option selected>kategoriya...</option>
+                                    @foreach($category as $categories)
+                                    <option value="{{ $categories->id }}">{{ $categories->name_uz }}</option>
+                                    @endforeach
+                                  </select>
+                                </div>
+                            </div>
+                            <div class="card-header">
+                                <div class="input-group mb-3">
+                                  <input type="file"name="image" class="form-control">
+                                </div>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <form action="{{ route('posts.store') }}" method="post">
+                                    @csrf
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#uz" role="tab" aria-controls="home" aria-selected="true">uz</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#kiril" role="tab" aria-controls="profile" aria-selected="false">kiril</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#ru" role="tab" aria-controls="contact" aria-selected="false">ru</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#en" role="tab" aria-controls="contact" aria-selected="false">en</a>
+  </li>
+</ul>
+<hr>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="uz" role="tabpanel" aria-labelledby="home-tab">
+    <input type="text" name="title_uz" class="form-control" placeholder="nomi">
+    <hr>
+    <input type="text" name="description_uz" class="form-control" placeholder="qisqacha ma'lumot">
+    <hr>
+    <input type="text"name="body_uz" class="form-control" placeholder="to'liq ma'lumot">
+  </div>
+  <div class="tab-pane fade" id="kiril" role="tabpanel" aria-labelledby="profile-tab">
+    <input type="text" name="title_cyril" class="form-control" placeholder="nomi">
+    <hr>
+    <input type="text" name="description_cyril" class="form-control" placeholder="qisqacha ma'lumot">
+    <hr>
+    <input type="text"name="body_cyril" class="form-control" placeholder="to'liq ma'lumot">
+  </div>
+  <div class="tab-pane fade" id="ru" role="tabpanel" aria-labelledby="contact-tab">
+    <input type="text" name="title_ru" class="form-control" placeholder="nomi">
+    <hr>
+    <input type="text" name="description_ru" class="form-control" placeholder="qisqacha ma'lumot">
+    <hr>
+    <input type="text"name="body_ru" class="form-control" placeholder="to'liq ma'lumot">
+  </div>
+  <div class="tab-pane fade" id="en" role="tabpanel" aria-labelledby="contact-tab">
+    <input type="text" name="title_en" class="form-control" placeholder="nomi">
+    <hr>
+    <input type="text" name="description_en" class="form-control" placeholder="qisqacha ma'lumot">
+    <hr>
+    <input type="text"name="body_en" class="form-control" placeholder="to'liq ma'lumot">
+  </div>
+  </div>
+  <button type="submit" class="btn btn-primary mt-3" >Saqlash</button>
+</div>
+                                </form>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+@endsection
