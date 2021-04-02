@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -98,9 +99,34 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, $id)
     {
-        $post->update($request->all());
+
+        $post = Post::find($id);
+        if($request->hasFile('image')){
+//            $request->validate([
+//                'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+//            ]);
+            $path = $request->file('image')->store('public/news');
+            $post->image = $path;
+        }
+
+        $post->title_uz  = $request->input('title_uz');
+        $post->title_cyril  = $request->input('title_cyril');
+        $post->title_ru  = $request->input('title_ru');
+        $post->title_en  = $request->input('title_en');
+        $post->description_uz  = $request->input('description_uz');
+        $post->description_cyril  = $request->input('description_cyril');
+        $post->description_ru  = $request->input('description_ru');
+        $post->description_en  = $request->input('description_en');
+        $post->body_uz  = $request->input('body_uz');
+        $post->body_cyril  = $request->input('body_cyril');
+        $post->body_ru  = $request->input('body_ru');
+        $post->body_en  = $request->input('body_en');
+        $post->category_id  = $request->input('category_id');
+        $post->save();
+//        dd($post);
+
 
         return redirect()->route('posts.index')
             ->with('success','Yangilik O`zgartirildi');
