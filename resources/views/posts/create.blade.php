@@ -69,21 +69,21 @@
     <hr>
     <input type="text" name="description_cyril" class="form-control" placeholder="qisqacha ma'lumot">
     <hr>
-    <input type="text"name="body_cyril" class="form-control" placeholder="to'liq ma'lumot">
+    <textarea class="form-control" id="summary-ckeditor1" name="body_cyril"></textarea>
   </div>
   <div class="tab-pane fade" id="ru" role="tabpanel" aria-labelledby="contact-tab">
     <input type="text" name="title_ru" class="form-control" placeholder="nomi">
     <hr>
     <input type="text" name="description_ru" class="form-control" placeholder="qisqacha ma'lumot">
     <hr>
-    <input type="text"name="body_ru" class="form-control" placeholder="to'liq ma'lumot">
+    <textarea class="form-control" id="summary-ckeditor2" name="body_ru"></textarea>
   </div>
   <div class="tab-pane fade" id="en" role="tabpanel" aria-labelledby="contact-tab">
     <input type="text" name="title_en" class="form-control" placeholder="nomi">
     <hr>
     <input type="text" name="description_en" class="form-control" placeholder="qisqacha ma'lumot">
     <hr>
-    <input type="text"name="body_en" class="form-control" placeholder="to'liq ma'lumot">
+    <textarea class="form-control" id="summary-ckeditor3" name="body_en"></textarea>
   </div>
   </div>
   <button type="submit" class="btn btn-primary mt-3" >Saqlash</button>

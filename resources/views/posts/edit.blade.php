@@ -80,9 +80,9 @@
     <textarea class="form-control" id="summary-ckeditor2" name="body_ru">{{ $post->body_ru }}</textarea>
   </div>
   <div class="tab-pane fade" id="en" role="tabpanel" aria-labelledby="contact-tab">
-    <input type="text" name="title_en" class="form-control" placeholder="nomi">
+    <input type="text" name="title_en" value="{{ $post->title_en }}" class="form-control" placeholder="nomi">
     <hr>
-    <input type="text" name="description_en" class="form-control" placeholder="qisqacha ma'lumot">
+    <input type="text" name="description_en" value="{{ $post->description_en }}" class="form-control" placeholder="qisqacha ma'lumot">
     <hr>
     <textarea class="form-control" id="summary-ckeditor3" name="body_en">{{ $post->body_en }}</textarea>
   </div>

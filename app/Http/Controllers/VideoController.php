@@ -14,7 +14,8 @@ class VideoController extends Controller
      */
     public function index()
     {
-        //
+        $videos = Video::paginate(10);
+        return view('videos.index', compact('videos'));
     }
 
     /**
@@ -24,7 +25,7 @@ class VideoController extends Controller
      */
     public function create()
     {
-        //
+        return view('videos.create');
     }
 
     /**
@@ -35,7 +36,17 @@ class VideoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $data = new Video();
+
+       $data->title_uz = $request->input('title_uz');
+       $data->title_cyril = $request->input('title_cyril');
+       $data->title_ru = $request->input('title_ru');
+       $data->title_en = $request->input('title_en');
+       $data->video_link = $request->input('video_link');
+       $data->save();
+
+       return redirect()->route('videos.index')
+           ->with('success','Video yaratildi');
     }
 
     /**
@@ -57,7 +68,7 @@ class VideoController extends Controller
      */
     public function edit(Video $video)
     {
-        //
+        return view('videos.edit',compact('video'));
     }
 
     /**
@@ -69,8 +80,10 @@ class VideoController extends Controller
      */
     public function update(Request $request, Video $video)
     {
-        //
-    }
+        $video->update($request->all());
+
+        return redirect()->route('videos.index')
+            ->with('success','Video O`zgartirildi');    }
 
     /**
      * Remove the specified resource from storage.
@@ -80,6 +93,7 @@ class VideoController extends Controller
      */
     public function destroy(Video $video)
     {
-        //
+        $video->delete();
+        return back()->with('error','Video O`chirildi');
     }
 }

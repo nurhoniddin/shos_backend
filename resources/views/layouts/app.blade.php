@@ -83,6 +83,14 @@
                             </p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('videos.index') }}" class="nav-link">
+                            <i class="nav-icon far fa fa-list-ol"></i>
+                            <p>
+                                Videos
+                            </p>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->

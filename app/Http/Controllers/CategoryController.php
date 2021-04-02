@@ -14,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $cats = Category::paginate(1);
+        $cats = Category::paginate(10);
         return view('category.index', compact('cats'));
     }
 
@@ -70,7 +70,7 @@ class CategoryController extends Controller
         return view('category.edit',compact('category'));
     }
 
-    /**
+    /** 
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
