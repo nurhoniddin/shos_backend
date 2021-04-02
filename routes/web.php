@@ -35,3 +35,4 @@ Route::resource('videos',VideoController::class);
 Route::post('ckeditor/image_upload', CKEditorController::class)->name('upload');
 
 ///testet
+///testet222
