@@ -91,6 +91,14 @@
                             </p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('event.index') }}" class="nav-link">
+                            <i class="nav-icon far fa fa-calendar text-primary"></i>
+                            <p>
+                                Tadbirlar
+                            </p>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->

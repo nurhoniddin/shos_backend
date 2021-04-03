@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\CKEditorController;
@@ -33,6 +34,5 @@ Route::resource('category',CategoryController::class);
 Route::resource('posts',PostController::class);
 Route::resource('videos',VideoController::class);
 Route::post('ckeditor/image_upload', CKEditorController::class)->name('upload');
+Route::resource('event',EventController::class);
 
-///testet
-///testet222
