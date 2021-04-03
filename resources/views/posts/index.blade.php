@@ -13,7 +13,7 @@
 {{--                        <ol class="breadcrumb float-sm-right">--}}
 {{--                            <li class="breadcrumb-item"><a href="#">Home</a></li>--}}
 {{--                            <li class="breadcrumb-item active">Simple Tables</li>--}}
-{{--                        </ol>--}}r
+{{--                        </ol>--}}
 {{--                    </div>--}}
                 </div>
             </div><!-- /.container-fluid -->
@@ -40,9 +40,9 @@
                                     <thead>
                                     <tr>
                                         <th style="width: 10px">#</th>
-                                        <th>Title</th>
-                                        <th>description</th>
-                                        <th>body</th>
+                                        <th>nomi</th>
+                                        <th>qisqacha ma'lumot</th>
+                                        <th>to'liq ma'lumot</th>
                                         <th style="width: 100px">Action</th>
                                     </tr>
                                     </thead>

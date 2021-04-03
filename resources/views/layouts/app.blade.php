@@ -92,6 +92,22 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="{{ route('gcategory.index') }}" class="nav-link">
+                            <i class="nav-icon far fa fa-list-ol"></i>
+                            <p>
+                                Gallery Kategoriya
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('gallery.index') }}" class="nav-link">
+                            <i class="nav-icon far fa fa-list-ol"></i>
+                            <p>
+                                Gallery
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="{{ route('event.index') }}" class="nav-link">
                             <i class="nav-icon far fa fa-calendar text-primary"></i>
                             <p>

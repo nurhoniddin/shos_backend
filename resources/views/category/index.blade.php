@@ -40,10 +40,10 @@
                                     <thead>
                                     <tr>
                                         <th style="width: 10px">#</th>
-                                        <th>Kategoriya name_uz</th>
-                                        <th>Kategoriya name_cyril</th>
-                                        <th>Kategoriya name_ru</th>
-                                        <th>Kategoriya name_en</th>
+                                        <th>Kategoriya nomi uz</th>
+                                        <th>Kategoriya nomi kiril</th>
+                                        <th>Kategoriya nomi ru</th>
+                                        <th>Kategoriya nomi en</th>
                                         <th style="width: 100px">Action</th>
                                     </tr>
                                     </thead>

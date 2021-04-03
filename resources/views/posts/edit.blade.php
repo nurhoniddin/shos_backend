@@ -33,14 +33,14 @@
                                 <form action="{{ route('posts.update',$post->id) }}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
-<select class="custom-select" id="inputGroupSelect03" name="category_id" required="">
-<option selected>kategoriya...</option>
+<select class="custom-select" name="category_id" id="category_id" required>
+<option value="">kategoriya...</option>
 @foreach($category as $categories)
 <option value="{{ $categories->id }}">{{ $categories->name_uz }}</option>
 @endforeach
 </select>
 <hr>
-<input type="file" name="image" class="form-control">
+<input type="file" name="image" value="" class="form-control">
 <hr>
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">

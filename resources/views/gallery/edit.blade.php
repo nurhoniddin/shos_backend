@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Videolar</h1>
+                        <h1>Kategoriyalar</h1>
                     </div>
                     {{--                    <div class="col-sm-6">--}}
                     {{--                        <ol class="breadcrumb float-sm-right">--}}
@@ -26,30 +26,25 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <a class="btn btn-primary" href="{{ route('gallerycategory.index') }}">Bekor qilish</a>
+                                <a class="btn btn-primary" href="{{ route('gcategory.index') }}">Bekor qilish</a>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <form action="{{ route('gallerycategory.store') }}" method="post">
+                                <form action="{{ route('gcategory.update',$gcategory->id) }}" method="post" enctype="multipart/form-data">
                                     @csrf
-                                    <input type="text" name="title_uz" class="form-control" placeholder="video nomi uz">
+                                    @method('PUT')
+                                    <input type="text" name="name" value="{{ $gcategory->name }}" class="form-control" required="">
                                     <hr>
-                                    <input type="text" name="title_cyril" class="form-control" placeholder="video nomi kiril">
-                                    <hr>
-                                    <input type="text" name="title_ru" class="form-control" placeholder="video nomi ru">
-                                    <hr>
-                                    <input type="text" name="title_en" class="form-control" placeholder="video nomi en">
-                                    <hr>
-                                    <input type="text" name="video_link" class="form-control" placeholder="video_link">
+                                    <input type="file" name="image" class="form-control" required="">
                                     <button type="submit" class="btn btn-primary mt-3" >Saqlash</button>
                                 </form>
-                            </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div><!-- /.container-fluid -->
-        </section>
-        <!-- /.content -->
+            </div>
+    </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
     </div>
 @endsection

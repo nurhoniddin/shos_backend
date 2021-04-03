@@ -107,7 +107,7 @@ class PostController extends Controller
 //            $request->validate([
 //                'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
 //            ]);
-            $path = $request->file('image')->store('public/news');
+            $path = $request->file('image')->store('news','public');
             $post->image = $path;
         }
 

@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Videos</h1>
+                        <h1>Gallery Kategoriya</h1>
                     </div>
 {{--                    <div class="col-sm-6">--}}
 {{--                        <ol class="breadcrumb float-sm-right">--}}
@@ -26,7 +26,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <a class="btn btn-primary" href="{{ route('videos.create') }}">Yangi Video Qo'shish</a>
+                                <a class="btn btn-primary" href="{{ route('gcategory.create') }}">Yangi Kategoriya Qo'shish</a>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
@@ -40,20 +40,22 @@
                                     <thead>
                                     <tr>
                                         <th style="width: 10px">#</th>
-                                        <th>Video nomi </th>
-                                        <th>Video link</th>
+                                        <th>Kategoriya nomi</th>
+                                        <th>image</th>
                                         <th style="width: 100px">Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($videos as $video)
+                                    @foreach($gcategory as $gcategorys)
                                         <tr>
-                                            <td>{{ $video->id }}</td>
-                                            <td>{{ $video->title_uz }}</td>
-                                            <td>{{ $video->video_link }}</td>
+                                            <td>{{ $gcategorys->id }}</td>
+                                            <td>{{ $gcategorys->name }}</td>
+                                            <td>
+                                                <img src="storage/{{ $gcategorys->image }}" style="width: 150px">
+                                            </td>
                                             <td style="font-size: 20px">
-                                                <form action="{{ route('videos.destroy',$video->id) }}" method="post">
-                                                    <a href="{{ route('videos.edit',$video->id) }}"><i class="fa fa-pen-square"></i></a>
+                                                <form action="{{ route('gcategory.destroy',$gcategorys->id) }}" method="post">
+                                                    <a href="{{ route('gcategory.edit',$gcategorys->id) }}"><i class="fa fa-pen-square"></i></a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit"><i class="fa fa-trash"></i></button>
@@ -66,7 +68,7 @@
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer clearfix">
-                                {{ $videos->links() }}
+                                {{ $gcategory->links() }}
                             </div>
                         </div>
                     </div>

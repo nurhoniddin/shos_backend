@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Gallery;
+use App\Models\Gcategory;
 use Illuminate\Http\Request;
 
 class GalleryController extends Controller
@@ -14,7 +15,8 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        //
+        $gallery = Gallery::paginate(10);
+        return view('gallery.index', compact('gallery'));
     }
 
     /**
@@ -24,7 +26,8 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        //
+        $gallery = Gcategory::all();
+        return view('gallery.create', compact('gallery'));
     }
 
     /**
@@ -35,7 +38,17 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $files = $request->file('image');
+        foreach ($files as $file) {
+        $data = new Gallery();
+        $path = $file->file('image')->store('gallery','public');
+        $data->image = $path;
+        $data->gallery_categories  = $request->input('category_id');
+        $data->save();
+        }
+        return redirect()->route('gallery.index')
+           ->with('success','Gallery yaratildi');
     }
 
     /**
