@@ -96,5 +96,15 @@
     </section>
     <!-- /.content -->
     </div>
-
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <script>
+        CKEDITOR.replace( 'summary-ckeditor' );
+        CKEDITOR.replace( 'summary-ckeditor1' );
+        CKEDITOR.replace( 'summary-ckeditor2' );
+        CKEDITOR.replace( 'summary-ckeditor3' );
+        filebrowserBrowseUrl: '/browser/browse.php';
+        filebrowserImageBrowseUrl: '/browser/browse.php?type=Images';
+        filebrowserUploadUrl: '/uploader/upload.php';
+        filebrowserImageUploadUrl: '/uploader/upload.php?type=Images';
+    </script>
 @endsection

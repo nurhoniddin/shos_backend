@@ -7,14 +7,14 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Yangiliklar</h1>
+                        <h1>E'lonlar</h1>
                     </div>
-{{--                    <div class="col-sm-6">--}}
-{{--                        <ol class="breadcrumb float-sm-right">--}}
-{{--                            <li class="breadcrumb-item"><a href="#">Home</a></li>--}}
-{{--                            <li class="breadcrumb-item active">Simple Tables</li>--}}
-{{--                        </ol>--}}
-{{--                    </div>--}}
+                    {{--                    <div class="col-sm-6">--}}
+                    {{--                        <ol class="breadcrumb float-sm-right">--}}
+                    {{--                            <li class="breadcrumb-item"><a href="#">Home</a></li>--}}
+                    {{--                            <li class="breadcrumb-item active">Simple Tables</li>--}}
+                    {{--                        </ol>--}}
+                    {{--                    </div>--}}
                 </div>
             </div><!-- /.container-fluid -->
         </section>
@@ -26,7 +26,8 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <a class="btn btn-primary" href="{{ route('posts.create') }}">Yangilik Qo'shish</a>
+                                <a class="btn btn-info" href="{{ route('ads.create') }}"><i
+                                        class="fa fa-plus-square "></i></a>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
@@ -40,25 +41,26 @@
                                     <thead>
                                     <tr>
                                         <th style="width: 10px">#</th>
-                                        <th>nomi</th>
-                                        <th>qisqacha ma'lumot</th>
-                                        <th>to'liq ma'lumot</th>
-                                        <th style="width: 100px">Action</th>
+                                        <th>Title</th>
+                                        <th>description</th>
+                                        <th style="width: 150px">Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($posts as $post)
+                                    @foreach($adss as $ads)
                                         <tr>
-                                            <td>{{ $post->id }}</td>
-                                            <td>{{ $post->title_uz }}</td>
-                                            <td>{{ $post->description_uz }}</td>
-                                            <td>{!! $post->body_uz !!}</td>
+                                            <td>{{ $ads->id }}</td>
+                                            <td>{{ $ads->title_uz }}</td>
+                                            <td>{{ $ads->description_uz }}</td>
                                             <td style="font-size: 20px">
-                                                <form action="{{ route('posts.destroy',$post->id) }}" method="post">
-                                                    <a href="{{ route('posts.edit',$post->id) }}"><i class="fa fa-pen-square"></i></a>
+                                                <form action="{{ route('ads.destroy',$ads->id) }}" method="post">
+                                                    <!-- <a href="{{ route('ads.edit',$ads->id) }}"><i
+                                                            class="fa fa-pen-square"></i></a>
+                                                    <a href="{{ route('ads.show',$ads->id) }}"><i
+                                                            class="fa fa-eye"></i></a> -->
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit"><i class="fa fa-trash"></i></button>
+                                                    <button class="submit"><i class="fas fa-trash-alt"></i></button>
                                                 </form>
                                             </td>
                                         </tr>
@@ -68,7 +70,7 @@
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer clearfix">
-                                {{ $posts->links() }}
+                                {{ $adss->links() }}
                             </div>
                         </div>
                     </div>
@@ -78,3 +80,4 @@
         <!-- /.content -->
     </div>
 @endsection
+

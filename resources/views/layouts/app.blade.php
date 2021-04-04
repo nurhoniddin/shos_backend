@@ -115,6 +115,14 @@
                             </p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('ads.index') }}" class="nav-link">
+                            <i class="nav-icon far fa fa-calendar text-primary"></i>
+                            <p>
+                                E'lonlar
+                            </p>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
@@ -125,31 +133,6 @@
     @yield('content')
 </div>
 
-<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
-<script>
-CKEDITOR.replace( 'summary-ckeditor', {
-    filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
-    filebrowserUploadMethod: 'form'
-});
-</script>
-<script>
-CKEDITOR.replace( 'summary-ckeditor1', {
-    filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
-    filebrowserUploadMethod: 'form'
-});
-</script>
-<script>
-CKEDITOR.replace( 'summary-ckeditor2', {
-    filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
-    filebrowserUploadMethod: 'form'
-});
-</script>
-<script>
-CKEDITOR.replace( 'summary-ckeditor3', {
-    filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
-    filebrowserUploadMethod: 'form'
-});
-</script>
 
 <!-- jQuery -->
 <script src="{{ asset('backend/plugins/jquery/jquery.min.js') }}"></script>
