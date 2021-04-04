@@ -26,10 +26,10 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <a class="btn btn-info" href="{{ route('ads.index') }}"><i
+                                <a class="btn btn-info" href="{{ route('notification.index') }}"><i
                                         class="fa fa-arrow-alt-circle-left "></i></a>
                             </div>
-                            <form action="{{ route('ads.store') }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('notification.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <!-- /.card-header -->
                                 <div class="card-body">

@@ -116,7 +116,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('ads.index') }}" class="nav-link">
+                        <a href="{{ route('notification.index') }}" class="nav-link">
                             <i class="nav-icon far fa fa-calendar text-primary"></i>
                             <p>
                                 E'lonlar

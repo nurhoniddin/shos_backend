@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Ads;
+use App\Models\Notification;
 use Illuminate\Http\Request;
 
-class AdsController extends Controller
+class NotificationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class AdsController extends Controller
      */
     public function index()
     {
-        $adss = Ads::paginate(10);
-        return view('ads.index', compact('adss'));
+        $notification = Notification::paginate(10);
+        return view('notification.index', compact('notification'));
     }
 
     /**
@@ -25,7 +25,8 @@ class AdsController extends Controller
      */
     public function create()
     {
-        return view('ads.create');
+        $notification = Notification::all();
+        return view('notification.create', compact('notification'));
     }
 
     /**
@@ -36,7 +37,7 @@ class AdsController extends Controller
      */
     public function store(Request $request)
     {
-        $data = new Ads();
+        $data = new Notification();
 
         $data->title_uz = $request->input('title_uz');
         $data->title_cyril = $request->input('title_cyril');
@@ -63,17 +64,17 @@ class AdsController extends Controller
 
         $data->save();
 
-        return redirect()->route('ads.index')
+        return redirect()->route('notification.index')
             ->with('success', 'E\'lon yaratildi');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Ads  $ads
+     * @param  \App\Models\Notification  $notification
      * @return \Illuminate\Http\Response
      */
-    public function show(Ads $ads)
+    public function show(Notification $notification)
     {
         //
     }
@@ -81,10 +82,10 @@ class AdsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Ads  $ads
+     * @param  \App\Models\Notification  $notification
      * @return \Illuminate\Http\Response
      */
-    public function edit(Ads $ads)
+    public function edit(Notification $notification)
     {
         //
     }
@@ -93,10 +94,10 @@ class AdsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Ads  $ads
+     * @param  \App\Models\Notification  $notification
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Ads $ads)
+    public function update(Request $request, Notification $notification)
     {
         //
     }
@@ -104,12 +105,12 @@ class AdsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Ads  $ads
+     * @param  \App\Models\Notification  $notification
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Ads $ads)
+    public function destroy(Notification $notification)
     {
-        $ads->delete();
+        $notification->delete();
         return back()->with('error','E\'lon O`chirildi');
     }
 }

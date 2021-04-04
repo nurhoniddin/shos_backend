@@ -26,7 +26,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <a class="btn btn-info" href="{{ route('ads.create') }}"><i
+                                <a class="btn btn-info" href="{{ route('notification.create') }}"><i
                                         class="fa fa-plus-square "></i></a>
                             </div>
                             <!-- /.card-header -->
@@ -47,16 +47,16 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($adss as $ads)
+                                    @foreach($notification as $notifications)
                                         <tr>
-                                            <td>{{ $ads->id }}</td>
-                                            <td>{{ $ads->title_uz }}</td>
-                                            <td>{{ $ads->description_uz }}</td>
+                                            <td>{{ $notifications->id }}</td>
+                                            <td>{{ $notifications->title_uz }}</td>
+                                            <td>{{ $notifications->description_uz }}</td>
                                             <td style="font-size: 20px">
-                                                <form action="{{ route('ads.destroy',$ads->id) }}" method="post">
-                                                    <!-- <a href="{{ route('ads.edit',$ads->id) }}"><i
+                                                <form action="{{ route('notification.destroy',$notifications->id) }}" method="post">
+                                                    <!-- <a href="{{ route('notification.edit',$notifications->id) }}"><i
                                                             class="fa fa-pen-square"></i></a>
-                                                    <a href="{{ route('ads.show',$ads->id) }}"><i
+                                                    <a href="{{ route('notification.show',$notifications->id) }}"><i
                                                             class="fa fa-eye"></i></a> -->
                                                     @csrf
                                                     @method('DELETE')
@@ -70,7 +70,7 @@
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer clearfix">
-                                {{ $adss->links() }}
+                                {{ $notification->links() }}
                             </div>
                         </div>
                     </div>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAdsTable extends Migration
+class CreateNotificationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,8 @@ class CreateAdsTable extends Migration
      * @return void
      */
     public function up()
-    {  
-        Schema::create('ads', function (Blueprint $table) {
+    {
+        Schema::create('notifications', function (Blueprint $table) {
             $table->id();
             $table->string('title_uz')->nullable();
             $table->string('title_cyril')->nullable();
@@ -41,6 +41,6 @@ class CreateAdsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ads');
+        Schema::dropIfExists('notifications');
     }
 }
