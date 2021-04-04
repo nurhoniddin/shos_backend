@@ -13,4 +13,9 @@ class Gallery extends Model
     'image',
     'gallery_categories'
     ];
+
+    public function gcategory()
+    {
+        return $this->belongsTo('App\Models\Gcategory');
+    }
 }

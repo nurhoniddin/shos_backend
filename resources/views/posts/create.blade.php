@@ -28,8 +28,6 @@
                             <div class="card-header">
                                 <a class="btn btn-primary" href="{{ route('posts.index') }}">Bekor qilish</a>
                             </div>
-                            <form action="{{ route('posts.store') }}" method="post" enctype="multipart/form-data">
-                            @csrf
                             <!-- /.card-header -->
                             <div class="card-body">
                                 <form action="{{ route('posts.store') }}" method="post" enctype="multipart/form-data">
@@ -89,11 +87,7 @@
   </div>
   </div>
   <button type="submit" class="btn btn-primary mt-3" >Saqlash</button>
-</div>
-                            </div>
-                            </div>
                             </form>
-                        </div>
                     </div>
                 </div>
             </div>

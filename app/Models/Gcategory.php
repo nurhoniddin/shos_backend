@@ -13,4 +13,9 @@ class Gcategory extends Model
     'name',
     'image'
     ];
+
+    public function gallery()
+    {
+        return $this->hasMany('App\Models\Gallery');
+    }
 }

@@ -40,6 +40,7 @@
                                     <thead>
                                     <tr>
                                         <th style="width: 10px">#</th>
+                                        <th>gallery category</th>
                                         <th>image</th>
                                         <th style="width: 100px">Action</th>
                                     </tr>
@@ -48,12 +49,12 @@
                                     @foreach($gallery as $gallerys)
                                         <tr>
                                             <td>{{ $gallerys->id }}</td>
+                                            <td>{{ $gallerys->gallery_categories }}</td>
                                             <td>
                                                 <img src="storage/{{ $gallerys->image }}" style="width: 150px">
                                             </td>
                                             <td style="font-size: 20px">
                                                 <form action="{{ route('gallery.destroy',$gallerys->id) }}" method="post">
-                                                    <a href="{{ route('gallery.edit',$gallerys->id) }}"><i class="fa fa-pen-square"></i></a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit"><i class="fa fa-trash"></i></button>

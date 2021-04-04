@@ -39,14 +39,21 @@ class GalleryController extends Controller
     public function store(Request $request)
     {
 
-        $files = $request->file('image');
-        foreach ($files as $file) {
-        $data = new Gallery();
-        $path = $file->file('image')->store('gallery','public');
-        $data->image = $path;
-        $data->gallery_categories  = $request->input('category_id');
-        $data->save();
-        }
+         if($request->hasfile('image'))
+         {
+            foreach($request->file('image') as $key => $file)
+            {
+                $path = $file->store('gallery', 'public');
+                // $name = $file->getClientOriginalName();
+
+                $insert[$key]['gallery_categories'] = $request->input('category_id');
+                $insert[$key]['image'] = $path;
+
+            }
+         }
+
+        Gallery::insert($insert);
+
         return redirect()->route('gallery.index')
            ->with('success','Gallery yaratildi');
     }
@@ -93,6 +100,7 @@ class GalleryController extends Controller
      */
     public function destroy(Gallery $gallery)
     {
-        //
+        $gallery->delete();
+        return back()->with('error', 'Image O`chirildi');
     }
 }
