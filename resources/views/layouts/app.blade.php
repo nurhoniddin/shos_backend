@@ -77,7 +77,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('posts.index') }}" class="nav-link">
-                            <i class="nav-icon far fa fa-list-ol"></i>
+                            <i class="nav-icon far fa fa-newspaper"></i>
                             <p>
                                 Yangiliklar
                             </p>
@@ -85,7 +85,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('videos.index') }}" class="nav-link">
-                            <i class="nav-icon far fa fa-list-ol"></i>
+                            <i class="nav-icon far fa fa-video"></i>
                             <p>
                                 Videos
                             </p>
@@ -93,7 +93,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('gcategory.index') }}" class="nav-link">
-                            <i class="nav-icon far fa fa-list-ol"></i>
+                            <i class="nav-icon far fa fa-list"></i>
                             <p>
                                 Gallery Kategoriya
                             </p>
@@ -101,7 +101,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('gallery.index') }}" class="nav-link">
-                            <i class="nav-icon far fa fa-list-ol"></i>
+                            <i class="nav-icon far fa fa-photo-video"></i>
                             <p>
                                 Gallery
                             </p>
@@ -109,7 +109,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('event.index') }}" class="nav-link">
-                            <i class="nav-icon far fa fa-calendar text-primary"></i>
+                            <i class="nav-icon far fa fa-calendar"></i>
                             <p>
                                 Tadbirlar
                             </p>
@@ -117,7 +117,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('notification.index') }}" class="nav-link">
-                            <i class="nav-icon far fa fa-calendar text-primary"></i>
+                            <i class="nav-icon far fa fa-address-card "></i>
                             <p>
                                 E'lonlar
                             </p>
@@ -126,7 +126,7 @@
 
                     <li class="nav-item">
                         <a href="{{ route('staff.index') }}" class="nav-link">
-                            <i class="nav-icon far fa fa-users text-primary"></i>
+                            <i class="nav-icon far fa fa-users "></i>
                             <p>
                                 Xodimlar
                             </p>
