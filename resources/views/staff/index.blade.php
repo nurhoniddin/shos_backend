@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Tadbirlar</h1>
+                        <h1>Hodimlar</h1>
                     </div>
                     {{--                    <div class="col-sm-6">--}}
                     {{--                        <ol class="breadcrumb float-sm-right">--}}
@@ -26,7 +26,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <a class="btn btn-info" href="{{ route('event.create') }}"><i
+                                <a class="btn btn-info" href="{{ route('staff.create') }}"><i
                                         class="fa fa-plus-square "></i></a>
                             </div>
                             <!-- /.card-header -->
@@ -41,28 +41,26 @@
                                     <thead>
                                     <tr>
                                         <th style="width: 10px">#</th>
-                                        <th>Title</th>
-                                        <th>description</th>
-                                        <th>body</th>
+                                        <th>FIO</th>
+                                        <th>Lavozimi</th>
+                                        <th>Tel</th>
                                         <th>image</th>
-                                        <th>Address</th>
                                         <th style="width: 150px">Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($events as $event)
+                                    @foreach($staffs as $staff)
                                         <tr>
-                                            <td>{{ $event->id }}</td>
-                                            <td>{{ $event->title_uz }}</td>
-                                            <td>{{ $event->description_uz }}</td>
-                                            <td>{!! $event->body_uz !!}</td>
-                                            <td><img style="width: 150px; height: 150px" src="{{ Storage::url($event->image) }}" alt=""></td>
-                                            <td>{{ $event->address_uz  }}</td>
+                                            <td>{{ $staff->id }}</td>
+                                            <td>{{ $staff->fname_uz }}</td>
+                                            <td>{{ $staff->position_uz }}</td>
+                                            <td>{!! $staff->phone_uz !!}</td>
+                                            <td><img style="width: 150px; height:100px" src="{{ Storage::url($staff->image) }}" alt=""></td>
                                             <td style="font-size: 20px">
-                                                <form action="{{ route('event.destroy',$event->id) }}" method="post">
-                                                    <a href="{{ route('event.edit',$event->id) }}"><i
+                                                <form action="{{ route('staff.destroy',$staff->id) }}" method="post">
+                                                    <a href="{{ route('staff.edit',$staff->id) }}"><i
                                                             class="fa fa-pen-square"></i></a>
-                                                    <a href="{{ route('event.show',$event->id) }}"><i
+                                                    <a href="{{ route('staff.show',$staff->id) }}"><i
                                                             class="fa fa-eye"></i></a>
                                                     @csrf
                                                     @method('DELETE')
@@ -76,7 +74,7 @@
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer clearfix">
-                                {{ $events->links() }}
+                                {{ $staffs->links() }}
                             </div>
                         </div>
                     </div>

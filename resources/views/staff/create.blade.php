@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Tadbirlar</h1>
+                        <h1>Xodimlar</h1>
                     </div>
                     {{--                    <div class="col-sm-6">--}}
                     {{--                        <ol class="breadcrumb float-sm-right">--}}
@@ -26,10 +26,10 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <a class="btn btn-info" href="{{ route('event.index') }}"><i
+                                <a class="btn btn-info" href="{{ route('staff.create') }}"><i
                                         class="fa fa-arrow-alt-circle-left "></i></a>
                             </div>
-                            <form action="{{ route('event.store') }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('staff.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <!-- /.card-header -->
                                 <div class="card-body">
@@ -61,67 +61,51 @@
                                     <div class="tab-content" id="pills-tabContent">
                                         <div class="tab-pane fade show active" id="uz" role="tabpanel"
                                              aria-labelledby="uz">
-                                            <label for="title_uz">Sarlavha</label>
-                                            <input type="text" name="title_uz"  class="form-control" required>
+                                            <label for="fname_uz">FIO</label>
+                                            <input type="text" name="fname_uz"  class="form-control" required>
                                             <hr>
-                                            <label for="description_uz">Qisqacha</label>
-                                            <input type="text" name="description_uz"   class="form-control" required>
+                                            <label for="position_uz">Lavozimi</label>
+                                            <input type="text" name="position_uz"   class="form-control" required>
                                             <hr>
-                                            <label for="title_uz">Manzil</label>
-                                            <input type="text" name="address_uz"  class="form-control" required>
+                                            <label for="phone_uz">Tel</label>
+                                            <input type="text" name="phone_uz"  class="form-control" required>
                                             <hr>
-                                            <label for="body_uz">Tadbir Haqida</label>
-                                            <textarea class="form-control" id="editor1"  name="body_uz" required>
-
-                                            </textarea>
                                         </div>
                                         <div class="tab-pane fade" id="kiril" role="tabpanel"
                                              aria-labelledby="kiril">
-                                            <label for="title_kiril">Сарлавҳа</label>
-                                            <input type="text" name="title_kiril"  class="form-control">
+                                            <label for="fname_kiril">ФИО</label>
+                                            <input type="text" name="fname_kiril"  class="form-control">
                                             <hr>
-                                            <label for="title_kiril">Қисқача</label>
-                                            <input type="text" name="description_kiril"  class="form-control">
+                                            <label for="position_kiril">Лавозими</label>
+                                            <input type="text" name="position_kiril"  class="form-control">
                                             <hr>
-                                            <label for="address_kiril">Манзил</label>
-                                            <input type="text" name="address_kiril" class="form-control">
+                                            <label for="phone_kiril">Тел</label>
+                                            <input type="text" name="phone_kiril" class="form-control">
                                             <hr>
-                                            <label for="body_uz">Тадбир Ҳақида</label>
-                                            <textarea class="form-control" id="editor2" name="body_kiril">
-
-                                            </textarea>
                                         </div>
                                         <div class="tab-pane fade" id="ru" role="tabpanel"
                                              aria-labelledby="ru">
-                                            <label for="title_ru">Сарлавҳа</label>
-                                            <input type="text" name="title_ru"  class="form-control">
+                                            <label for="fname_ru">ФИО</label>
+                                            <input type="text" name="fname_ru"  class="form-control">
                                             <hr>
-                                            <label for="title_kiril">Қисқача</label>
-                                            <input type="text" name="description_ru"  class="form-control">
+                                            <label for="position_ru">Лавозими</label>
+                                            <input type="text" name="position_ru"  class="form-control">
                                             <hr>
-                                            <label for="address_ru">Манзил</label>
-                                            <input type="text" name="address_ru"  class="form-control">
+                                            <label for="phone_ru">Тел</label>
+                                            <input type="text" name="phone_ru"  class="form-control">
                                             <hr>
-                                            <label for="body_uz">Тадбир Ҳақида</label>
-                                            <textarea class="form-control" id="editor3" name="body_ru">
-
-                                            </textarea>
                                         </div>
                                         <div class="tab-pane fade" id="en" role="tabpanel"
                                              aria-labelledby="en">
-                                            <label for="title_en">Title</label>
-                                            <input type="text" name="title_en"  class="form-control">
+                                            <label for="fname_en">Full name</label>
+                                            <input type="text" name="fname_en"  class="form-control">
                                             <hr>
-                                            <label for="title_kiril">Aescription</label>
-                                            <input type="text" name="description_en"  class="form-control">
+                                            <label for="position_en">Positon</label>
+                                            <input type="text" name="position_en"  class="form-control">
                                             <hr>
-                                            <label for="address_en">Address</label>
-                                            <input type="text" name="address_en"  class="form-control">
+                                            <label for="phone_en">phone</label>
+                                            <input type="text" name="phone_en"  class="form-control">
                                             <hr>
-                                            <label for="body_uz">Event About</label>
-                                            <textarea class="form-control" id="editor4" name="body_en">
-
-                                            </textarea>
                                         </div>
                                     </div>
                                     <button type="submit" class="btn btn-primary mt-3">Saqlash</button>

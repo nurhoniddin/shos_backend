@@ -8,6 +8,7 @@ use App\Http\Controllers\GcategoryController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\AdsController;
 use App\Http\Controllers\CKEditorController;
+use App\Http\Controllers\StaffController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,4 +42,5 @@ Route::resource('gallery',GalleryController::class);
 Route::post('ckeditor/image_upload', CKEditorController::class)->name('upload');
 Route::resource('event',EventController::class);
 Route::resource('ads',AdsController::class);
+Route::resource('staff',StaffController::class);
 

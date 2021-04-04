@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class EventController extends Controller
 {
@@ -122,7 +123,7 @@ class EventController extends Controller
         $post->description_en = $request->input('description_en');
         $post->body_uz = $request->input('body_uz');
         $post->body_kiril = $request->input('body_kiril');
-        $post->body_ru = $request->input('body_ru');
+        $post->body_ru = $request->input('body_ruoreac');
         $post->body_en = $request->input('body_en');
         $post->save();
 //        dd($post);
@@ -140,7 +141,9 @@ class EventController extends Controller
      */
     public function destroy(Event $event)
     {
-        $event->delete();
+        if (Storage::disk('public')->delete($event->image)){
+            $event->delete();
+        }
         return redirect()->route('event.index')
             ->with('error','Muoffaqiyatli O\'chirildi');
     }

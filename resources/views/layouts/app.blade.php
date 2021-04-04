@@ -123,6 +123,15 @@
                             </p>
                         </a>
                     </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route('staff.index') }}" class="nav-link">
+                            <i class="nav-icon far fa fa-users text-primary"></i>
+                            <p>
+                                Xodimlar
+                            </p>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
