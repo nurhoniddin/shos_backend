@@ -141,6 +141,15 @@
                             </p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('calendar.index') }}" class="nav-link">
+                            <i class="nav-icon far fa fa-calendar "></i>
+                            <p>
+                                Kalendar
+
+                            </p>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->

@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>E'lonlar</h1>
+                        <h1>Calendar</h1>
                     </div>
                     {{--                    <div class="col-sm-6">--}}
                     {{--                        <ol class="breadcrumb float-sm-right">--}}
@@ -26,20 +26,15 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <a class="btn btn-info" href="{{ route('notification.index') }}"><i
+                                <a class="btn btn-info" href="{{ route('calendar.index') }}"><i
                                         class="fa fa-arrow-alt-circle-left "></i></a>
                             </div>
-                            <form action="{{ route('notification.store') }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('calendar.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <!-- /.card-header -->
                                 <div class="card-body">
-                                    <input type="file" name="image" class="form-control" required="">
-                                    <br>
-                                    <label for="ads_start">Boshlanishi</label>
-                                    <input type="date" name="ads_start"  class="form-control">
-                                    <hr>
-                                    <label for="ads_end">Tugashi</label>
-                                    <input type="date" name="ads_end"  class="form-control">
+                                    <label for="ads_start">Kalendar</label>
+                                    <input type="date" name="calendar"  class="form-control">
                                     <hr>
                                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                         <li class="nav-item">
