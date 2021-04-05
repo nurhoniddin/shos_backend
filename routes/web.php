@@ -43,4 +43,5 @@ Route::post('ckeditor/image_upload', CKEditorController::class)->name('upload');
 Route::resource('event',EventController::class);
 Route::resource('notification',NotificationController::class);
 Route::resource('staff',StaffController::class);
+Route::resource('management',\App\Http\Controllers\ManagementController::class);
 

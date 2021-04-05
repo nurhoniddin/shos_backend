@@ -39,7 +39,7 @@
                                 @endif
                                 <table class="table table-bordered">
                                     <thead>
-                                    <tr>
+                                    <tr class="text-uppercase">
                                         <th style="width: 10px">#</th>
                                         <th>Title</th>
                                         <th>description</th>

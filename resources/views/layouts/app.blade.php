@@ -132,6 +132,15 @@
                             </p>
                         </a>
                     </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route('management.index') }}" class="nav-link">
+                            <i class="nav-icon far fa fa-users "></i>
+                            <p>
+                                Boshqaruv
+                            </p>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->

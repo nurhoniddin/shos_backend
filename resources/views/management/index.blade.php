@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Xodimlar</h1>
+                        <h1>Boshqaruv</h1>
                     </div>
                     {{--                    <div class="col-sm-6">--}}
                     {{--                        <ol class="breadcrumb float-sm-right">--}}
@@ -26,7 +26,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <a class="btn btn-info" href="{{ route('staff.create') }}"><i
+                                <a class="btn btn-info" href="{{ route('management.create') }}"><i
                                         class="fa fa-plus-square "></i></a>
                             </div>
                             <!-- /.card-header -->
@@ -42,25 +42,27 @@
                                     <tr class="text-uppercase">
                                         <th style="width: 10px">#</th>
                                         <th>FIO</th>
-                                        <th>Lavozimi</th>
-                                        <th>Tel</th>
-                                        <th>image</th>
+                                        <th>Tug'ilgan Sana</th>
+                                        <th>talim</th>
+                                        <th>Ish tajribasi</th>
+                                        <th>rasm</th>
                                         <th style="width: 150px">Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($staffs as $staff)
+                                    @foreach($manages as $m)
                                         <tr>
-                                            <td>{{ $staff->id }}</td>
-                                            <td>{{ $staff->fname_uz }}</td>
-                                            <td>{{ $staff->position_uz }}</td>
-                                            <td>{!! $staff->phone_uz !!}</td>
-                                            <td><img style="width: 150px; height:100px" src="{{ Storage::url($staff->image) }}" alt=""></td>
+                                            <td>{{ $m->id }}</td>
+                                            <td>{{ $m->fname_uz }}</td>
+                                            <td>{{ $m->birthday_uz }}</td>
+                                            <td>{!! $m->education_uz !!}</td>
+                                            <td>{!! $m->work_ex_uz !!}</td>
+                                            <td><img style="width: 150px; height:100px" src="{{ Storage::url($m->image) }}" alt=""></td>
                                             <td style="font-size: 20px">
-                                                <form action="{{ route('staff.destroy',$staff->id) }}" method="post">
-                                                    <a href="{{ route('staff.edit',$staff->id) }}"><i
+                                                <form action="{{ route('management.destroy',$m->id) }}" method="post">
+                                                    <a href="{{ route('management.edit',$m->id) }}"><i
                                                             class="fa fa-pen-square"></i></a>
-                                                    <a href="{{ route('staff.show',$staff->id) }}"><i
+                                                    <a href="{{ route('management.show',$m->id) }}"><i
                                                             class="fa fa-eye"></i></a>
                                                     @csrf
                                                     @method('DELETE')
@@ -74,7 +76,7 @@
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer clearfix">
-                                {{ $staffs->links() }}
+                                {{ $manages->links() }}
                             </div>
                         </div>
                     </div>
