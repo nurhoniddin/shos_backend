@@ -23,3 +23,5 @@ Route::get('/event', [\App\Http\Controllers\Api\EventController::class,'index'])
 Route::get('/manage', [\App\Http\Controllers\Api\ManagementController::class,'index'])->name('management');
 Route::get('/staff', [\App\Http\Controllers\Api\StaffController::class,'index'])->name('staff');
 Route::get('/video', [\App\Http\Controllers\Api\VideoController::class,'index'])->name('video');
+Route::get('/gallery', [\App\Http\Controllers\Api\GalleryController::class,'index'])->name('gallery');
+Route::get('/gcategory', [\App\Http\Controllers\Api\GcategoryController::class,'index'])->name('gcategory');
