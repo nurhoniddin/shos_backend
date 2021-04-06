@@ -25,3 +25,7 @@ Route::get('/staff', [\App\Http\Controllers\Api\StaffController::class,'index'])
 Route::get('/video', [\App\Http\Controllers\Api\VideoController::class,'index'])->name('video');
 Route::get('/gallery', [\App\Http\Controllers\Api\GalleryController::class,'index'])->name('gallery');
 Route::get('/gcategory', [\App\Http\Controllers\Api\GcategoryController::class,'index'])->name('gcategory');
+Route::get('/category', [\App\Http\Controllers\Api\CategoryController::class,'index'])->name('category');
+Route::get('/post', [\App\Http\Controllers\Api\PostController::class,'index'])->name('post');
+Route::get('/notification', [\App\Http\Controllers\Api\NotificationController::class,'index'])->name('notification');
+
