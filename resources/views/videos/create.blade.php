@@ -26,11 +26,11 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <a class="btn btn-primary" href="{{ route('gallerycategory.index') }}">Bekor qilish</a>
+                                <a class="btn btn-primary" href="{{ route('videos.index') }}">Bekor qilish</a>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <form action="{{ route('gallerycategory.store') }}" method="post">
+                                <form action="{{ route('videos.store') }}" method="post">
                                     @csrf
                                     <input type="text" name="title_uz" class="form-control" placeholder="video nomi uz">
                                     <hr>

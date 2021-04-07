@@ -150,6 +150,15 @@
                             </p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('word.index') }}" class="nav-link">
+                            <i class="nav-icon far fa fa-newspaper "></i>
+                            <p>
+                                Hikmatli so'zlar
+
+                            </p>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->

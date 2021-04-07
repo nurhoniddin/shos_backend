@@ -29,8 +29,9 @@
                                 <a class="btn btn-info" href="{{ route('event.index') }}"><i
                                         class="fa fa-arrow-alt-circle-left "></i></a>
                             </div>
-                            <form action="{{ route('event.store') }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('event.update',$event->id) }}" method="post" enctype="multipart/form-data">
                             @csrf
+                              @method('PUT')
                             <!-- /.card-header -->
                                 <div class="card-body">
                                     <input type="file" name="image" class="form-control">

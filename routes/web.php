@@ -10,6 +10,7 @@ use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\CKEditorController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\CalendarController;
+use App\Http\Controllers\WordController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,4 +47,5 @@ Route::resource('notification',NotificationController::class);
 Route::resource('staff',StaffController::class);
 Route::resource('management',\App\Http\Controllers\ManagementController::class);
 Route::resource('calendar',CalendarController::class);
+Route::resource('word',WordController::class);
 

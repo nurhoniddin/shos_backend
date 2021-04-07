@@ -101,35 +101,34 @@ class EventController extends Controller
      * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Event $event)
     {
 
-        $post = Event::find($id);
+    
         if ($request->hasFile('image')) {
 //            $request->validate([
 //                'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
 //            ]);
             $path = $request->file('image')->store('events','public');
-            $post->image = $path;
+            $event->image = $path;
         }
 
-        $post->title_uz = $request->input('title_uz');
-        $post->title_kiril = $request->input('title_kiril');
-        $post->title_ru = $request->input('title_ru');
-        $post->title_en = $request->input('title_en');
-        $post->description_uz = $request->input('description_uz');
-        $post->description_kiril = $request->input('description_kiril');
-        $post->description_ru = $request->input('description_ru');
-        $post->description_en = $request->input('description_en');
-        $post->body_uz = $request->input('body_uz');
-        $post->body_kiril = $request->input('body_kiril');
-        $post->body_ru = $request->input('body_ruoreac');
-        $post->body_en = $request->input('body_en');
-        $post->save();
-//        dd($post);
+        $event->title_uz = $request->input('title_uz');
+        $event->title_kiril = $request->input('title_kiril');
+        $event->title_ru = $request->input('title_ru');
+        $event->title_en = $request->input('title_en');
+        $event->description_uz = $request->input('description_uz');
+        $event->description_kiril = $request->input('description_kiril');
+        $event->description_ru = $request->input('description_ru');
+        $event->description_en = $request->input('description_en');
+        $event->body_uz = $request->input('body_uz');
+        $event->body_kiril = $request->input('body_kiril');
+        $event->body_ru = $request->input('body_ru');
+        $event->body_en = $request->input('body_en');
+        $event->save();
 
 
-        return redirect()->route('posts.index')
+        return redirect()->route('event.index')
             ->with('success', 'Tadbir Yangilandi');
     }
 

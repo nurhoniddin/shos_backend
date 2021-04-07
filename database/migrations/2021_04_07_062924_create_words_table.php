@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateWordOfWisdomsTable extends Migration
+class CreateWordsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class CreateWordOfWisdomsTable extends Migration
      */
     public function up()
     {
-        Schema::create('word_of_wisdoms', function (Blueprint $table) {
+        Schema::create('words', function (Blueprint $table) {
             $table->id();
+            $table->text('title_uz')->nullable();
+            $table->text('title_cyril')->nullable();
+            $table->text('title_ru')->nullable();
+            $table->text('title_en')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreateWordOfWisdomsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('word_of_wisdoms');
+        Schema::dropIfExists('words');
     }
 }

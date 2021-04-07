@@ -49,9 +49,9 @@ class StaffController extends Controller
             $staff->image = $path;
         }
         $staff->fname_uz = $request->input('fname_uz');
-        $staff->fname_kiril = $request->input('fname_uz');
-        $staff->fname_ru = $request->input('fname_uz');
-        $staff->fname_en = $request->input('fname_uz');
+        $staff->fname_kiril = $request->input('fname_kiril');
+        $staff->fname_ru = $request->input('fname_ru');
+        $staff->fname_en = $request->input('fname_en');
         $staff->position_uz = $request->input('position_uz');
         $staff->position_kiril = $request->input('position_kiril');
         $staff->position_ru = $request->input('position_ru');

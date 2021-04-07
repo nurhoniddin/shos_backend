@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>E'lonlar</h1>
+                        <h1>Hikmatli so'zlar</h1>
                     </div>
                     {{--                    <div class="col-sm-6">--}}
                     {{--                        <ol class="breadcrumb float-sm-right">--}}
@@ -26,7 +26,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <a class="btn btn-info" href="{{ route('notification.create') }}"><i
+                                <a class="btn btn-info" href="{{ route('word.create') }}"><i
                                         class="fa fa-plus-square "></i></a>
                             </div>
                             <!-- /.card-header -->
@@ -42,20 +42,18 @@
                                     <tr>
                                         <th style="width: 10px">#</th>
                                         <th>Title</th>
-                                        <th>description</th>
                                         <th style="width: 150px">Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($notification as $notifications)
+                                    @foreach($word as $words)
                                         <tr>
-                                            <td>{{ $notifications->id }}</td>
-                                            <td>{{ $notifications->title_uz }}</td>
-                                            <td>{{ $notifications->description_uz }}</td>
+                                            <td>{{ $words->id }}</td>
+                                            <td>{{ $words->title_uz }}</td>
                                             <td style="font-size: 20px">
-                                                <form action="{{ route('notification.destroy',$notifications->id) }}" method="post">
-                                                    <a href="{{ route('notification.edit',$notifications->id) }}"><i
-                                                            class="fa fa-pen-square"></i></a>
+                                                <form action="{{ route('word.destroy',$words->id) }}" method="post">
+                                                    <a href="{{ route('word.edit',$words->id) }}"><i class="fa fa-pen-square"></i></a>
+                                                    <!-- <a href="{{ route('word.show',$words->id) }}"><i class="fa fa-eye"></i></a> -->
                                                     @csrf
                                                     @method('DELETE')
                                                     <button class="submit"><i class="fas fa-trash-alt"></i></button>
@@ -68,7 +66,7 @@
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer clearfix">
-                                {{ $notification->links() }}
+                                {{ $word->links() }}
                             </div>
                         </div>
                     </div>

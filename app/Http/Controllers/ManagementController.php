@@ -47,9 +47,9 @@ class ManagementController extends Controller
             $management->image = $path;
         }
         $management->fname_uz = $request->input('fname_uz');
-        $management->fname_kiril = $request->input('fname_uz');
-        $management->fname_ru = $request->input('fname_uz');
-        $management->fname_en = $request->input('fname_uz');
+        $management->fname_kiril = $request->input('fname_kiril');
+        $management->fname_ru = $request->input('fname_ru');
+        $management->fname_en = $request->input('fname_en');
         $management->birthday_uz = $request->input('birthday_uz');
         $management->birthday_kiril = $request->input('birthday_kiril');
         $management->birthday_ru = $request->input('birthday_ru');
@@ -110,9 +110,9 @@ class ManagementController extends Controller
             $management->image = $path;
         }
         $management->fname_uz = $request->input('fname_uz');
-        $management->fname_kiril = $request->input('fname_uz');
-        $management->fname_ru = $request->input('fname_uz');
-        $management->fname_en = $request->input('fname_uz');
+        $management->fname_kiril = $request->input('fname_kiril');
+        $management->fname_ru = $request->input('fname_ru');
+        $management->fname_en = $request->input('fname_en');
         $management->birthday_uz = $request->input('birthday_uz');
         $management->birthday_kiril = $request->input('birthday_kiril');
         $management->birthday_ru = $request->input('birthday_ru');
@@ -126,7 +126,7 @@ class ManagementController extends Controller
         $management->work_ex_ru = $request->input('work_ex_ru');
         $management->work_ex_en = $request->input('work_ex_en');
         $management->save();
-        $management->save();
+        // $management->save();
 //        dd($staff);
 
 

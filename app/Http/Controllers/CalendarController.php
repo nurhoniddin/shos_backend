@@ -79,7 +79,7 @@ class CalendarController extends Controller
      */
     public function edit(Calendar $calendar)
     {
-        //
+        return view('calendar.edit',compact('calendar'));
     }
 
     /**
@@ -91,7 +91,10 @@ class CalendarController extends Controller
      */
     public function update(Request $request, Calendar $calendar)
     {
-        //
+        $calendar->update($request->all());
+
+        return redirect()->route('calendar.index')
+            ->with('success','Kalendar O`zgartirildi');
     }
 
     /**

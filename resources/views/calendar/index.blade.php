@@ -58,10 +58,8 @@
                                             <td>{{ $calendars->body_uz }}</td>
                                             <td style="font-size: 20px">
                                                 <form action="{{ route('calendar.destroy',$calendars->id) }}" method="post">
-                                                    <!-- <a href="{{ route('notification.edit',$calendars->id) }}"><i
+                                                    <a href="{{ route('calendar.edit',$calendars->id) }}"><i
                                                             class="fa fa-pen-square"></i></a>
-                                                    <a href="{{ route('notification.show',$calendars->id) }}"><i
-                                                            class="fa fa-eye"></i></a> -->
                                                     @csrf
                                                     @method('DELETE')
                                                     <button class="submit"><i class="fas fa-trash-alt"></i></button>

@@ -21,10 +21,6 @@ class Event extends Model
         'body_kiril',
         'body_ru',
         'body_en',
-        'address_uz',
-        'address_kiril',
-        'address_ru',
-        'address_en',
         'image'
     ];
 }

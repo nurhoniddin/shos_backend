@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Tadbirlar</h1>
+                        <h1>Kalendar</h1>
                     </div>
                     {{--                    <div class="col-sm-6">--}}
                     {{--                        <ol class="breadcrumb float-sm-right">--}}
@@ -26,14 +26,16 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <a class="btn btn-info" href="{{ route('event.index') }}"><i
+                                <a class="btn btn-info" href="{{ route('calendar.index') }}"><i
                                         class="fa fa-arrow-alt-circle-left "></i></a>
                             </div>
-                            <form action="{{ route('event.store') }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('calendar.update',$calendar->id) }}" method="post" enctype="multipart/form-data">
                             @csrf
+                            @method('PUT')
                             <!-- /.card-header -->
-                                <div class="card-body">
-                                    <input type="file" name="image" class="form-control">
+                                 <div class="card-body">
+                                    <label for="ads_start">Kalendar</label>
+                                    <input type="date" name="calendar" value="{{ $calendar->calendar }}" class="form-control">
                                     <hr>
                                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                         <li class="nav-item">
@@ -62,65 +64,53 @@
                                         <div class="tab-pane fade show active" id="uz" role="tabpanel"
                                              aria-labelledby="uz">
                                             <label for="title_uz">Sarlavha</label>
-                                            <input type="text" name="title_uz" value="{{ $event->title_uz }}" class="form-control">
+                                            <input type="text" name="title_uz" value="{{ $calendar->title_uz }}" class="form-control">
                                             <hr>
                                             <label for="description_uz">Qisqacha</label>
-                                            <input type="text" name="description_uz" value="{{ $event->description_uz }}"  class="form-control">
+                                            <input type="text" name="description_uz" value="{{ $calendar->description_uz }}"   class="form-control">
                                             <hr>
-                                            <label for="title_uz">Manzil</label>
-                                            <input type="text" name="address_uz" value="{{ $event->address_uz }}" class="form-control">
-                                            <hr>
-                                            <label for="body_uz">Tadbir Haqida</label>
+                                            <label for="body_uz">To'liq ma'lumot</label>
                                             <textarea class="form-control" id="editor1"  name="body_uz">
-                                                {!! $event->body_uz !!}
+{{ $calendar->body_uz }}
                                             </textarea>
                                         </div>
                                         <div class="tab-pane fade" id="kiril" role="tabpanel"
                                              aria-labelledby="kiril">
-                                            <label for="title_kiril">Сарлавҳа</label>
-                                            <input type="text" name="title_kiril" value="{{ $event->title_kiril }}" class="form-control">
+                                            <label for="title_uz">Sarlavha</label>
+                                            <input type="text" name="title_cyril" value="{{ $calendar->title_cyril }}" class="form-control">
                                             <hr>
-                                            <label for="title_kiril">Қисқача</label>
-                                            <input type="text" name="description_kiril" value="{{ $event->description_kiril }}" class="form-control">
+                                            <label for="description_uz">Qisqacha</label>
+                                            <input type="text" name="description_cyril" value="{{ $calendar->description_cyril }}"  class="form-control">
                                             <hr>
-                                            <label for="address_kiril">Манзил</label>
-                                            <input type="text" name="address_kiril" value="{{ $event->address_kiril }}" class="form-control">
-                                            <hr>
-                                            <label for="body_uz">Тадбир Ҳақида</label>
-                                            <textarea class="form-control" id="editor2" name="body_kiril">
-                                                {!! $event->body_kiril !!}
+                                            <label for="body_uz">To'liq ma'lumot</label>
+                                            <textarea class="form-control" id="editor2"  name="body_cyril">
+{{ $calendar->body_cyril }}
                                             </textarea>
                                         </div>
                                         <div class="tab-pane fade" id="ru" role="tabpanel"
                                              aria-labelledby="ru">
-                                            <label for="title_ru">Сарлавҳа</label>
-                                            <input type="text" name="title_ru" value="{{ $event->title_ru }}" class="form-control">
+                                            <label for="title_uz">Sarlavha</label>
+                                            <input type="text" name="title_ru" value="{{ $calendar->title_ru }}" class="form-control">
                                             <hr>
-                                            <label for="title_kiril">Қисқача</label>
-                                            <input type="text" name="description_ru" value="{{ $event->description_ru }}" class="form-control">
+                                            <label for="description_uz">Qisqacha</label>
+                                            <input type="text" name="description_ru"  value="{{ $calendar->description_ru }}" class="form-control">
                                             <hr>
-                                            <label for="address_ru">Манзил</label>
-                                            <input type="text" name="address_ru" value="{{ $event->address_ru }}" class="form-control">
-                                            <hr>
-                                            <label for="body_uz">Тадбир Ҳақида</label>
-                                            <textarea class="form-control" id="editor3" name="body_ru">
-                                                {!! $event->body_ru !!}
+                                            <label for="body_uz">To'liq ma'lumot</label>
+                                            <textarea class="form-control" id="editor3"  name="body_ru">
+{{ $calendar->body_ru }}
                                             </textarea>
                                         </div>
                                         <div class="tab-pane fade" id="en" role="tabpanel"
                                              aria-labelledby="en">
-                                            <label for="title_en">Title</label>
-                                            <input type="text" name="title_en" value="{{ $event->title_en }}" class="form-control">
+                                            <label for="title_uz">Sarlavha</label>
+                                            <input type="text" name="title_en" value="{{ $calendar->title_en }}" class="form-control">
                                             <hr>
-                                            <label for="title_kiril">description</label>
-                                            <input type="text" name="description_en" value="{{ $event->description_en }}" class="form-control">
+                                            <label for="description_en">Qisqacha</label>
+                                            <input type="text" name="description_en"  value="{{ $calendar->description_en }}" class="form-control">
                                             <hr>
-                                            <label for="address_en">address</label>
-                                            <input type="text" name="address_en" value="{{ $event->address_en }}" class="form-control">
-                                            <hr>
-                                            <label for="body_uz">Тадбир Ҳақида</label>
-                                            <textarea class="form-control" id="editor4" name="body_en">
-                                                {!! $event->body_en !!}
+                                            <label for="body_en">To'liq ma'lumot</label>
+                                            <textarea class="form-control" id="editor4"  name="body_en">
+{{ $calendar->body_en }}
                                             </textarea>
                                         </div>
                                     </div>
