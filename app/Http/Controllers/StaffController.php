@@ -136,9 +136,8 @@ class StaffController extends Controller
      */
     public function destroy(Staff $staff)
     {
-        if (Storage::disk('public')->delete($staff->image)){
+         Storage::disk('public')->delete($staff->image);
             $staff->delete();
-        }
              return redirect()->route('staff.index')
                  ->with('error','Muoffaqiyatli O\'chirildi');
     }

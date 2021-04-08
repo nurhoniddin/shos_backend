@@ -12,4 +12,8 @@ class EventController extends Controller
         $event = Event::orderBy('id','DESC')->get();
         return response()->json(compact('event'));
     }
+    public function single_event($id){
+        $event = Event::where('id', $id)->first();
+        return response()->json(compact('event'));
+    }
 }

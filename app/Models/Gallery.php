@@ -16,6 +16,6 @@ class Gallery extends Model
 
     public function gcategory()
     {
-        return $this->belongsTo('App\Models\Gcategory');
+        return $this->hasMany('App\Models\Gcategory');
     }
 }

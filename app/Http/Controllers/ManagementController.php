@@ -142,9 +142,9 @@ class ManagementController extends Controller
      */
     public function destroy(Management $management)
     {
-        if (Storage::disk('public')->delete($management->image)) {
+        Storage::disk('public')->delete($management->image);
             $management->delete();
-        }
+
         return redirect()->route('management.index')
             ->with('error', 'Muoffaqiyatli O\'chirildi');
     }

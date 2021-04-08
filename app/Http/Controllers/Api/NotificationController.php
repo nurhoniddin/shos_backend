@@ -12,4 +12,9 @@ class NotificationController extends Controller
         $notification = Notification::orderBy('id','DESC')->get();
         return response()->json(compact('notification'));
     }
+
+    public function single_notification($id){
+        $notification = Notification::where('id',$id)->first();
+        return response()->json(compact('notification'));
+    }
 }

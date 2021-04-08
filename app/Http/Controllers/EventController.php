@@ -104,7 +104,7 @@ class EventController extends Controller
     public function update(Request $request, Event $event)
     {
 
-    
+
         if ($request->hasFile('image')) {
 //            $request->validate([
 //                'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
@@ -140,9 +140,9 @@ class EventController extends Controller
      */
     public function destroy(Event $event)
     {
-        if (Storage::disk('public')->delete($event->image)){
+        Storage::disk('public')->delete($event->image);
             $event->delete();
-        }
+
         return redirect()->route('event.index')
             ->with('error','Muoffaqiyatli O\'chirildi');
     }
