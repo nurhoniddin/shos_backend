@@ -10,7 +10,14 @@ use Illuminate\Http\Request;
 class GalleryController extends Controller
 {
     public function index(){
-        $gallery = Gcategory::orderBy('id','DESC')->get();
+        $gallery = Gallery::orderBy('id','DESC')->get();
         return response()->json(compact('gallery'));
+    }
+
+    public function gallerys($gcategory_id)
+    {
+        $details = Gallery::where('gallery_categories',$gcategory_id)->get();
+
+        return response()->json(compact('details'));
     }
 }
