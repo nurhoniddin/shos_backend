@@ -20,13 +20,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // Route Calendars All
 Route::get('/calendar', [\App\Http\Controllers\Api\CalendarController::class,'index'])->name('calendar');
-<<<<<<< Updated upstream
+
 
 // Route Event  All
 Route::get('/event', [\App\Http\Controllers\Api\EventController::class,'index'])->name('event');
 
 // Route Management  All
-=======
+
 Route::get('/event', [\App\Http\Controllers\Api\EventController::class,'index']);
 //event single
 Route::get('/event/{id}', [\App\Http\Controllers\Api\EventController::class,'single_event']);

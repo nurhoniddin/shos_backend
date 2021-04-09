@@ -137,6 +137,7 @@ class NotificationController extends Controller
      */
     public function destroy(Notification $notification)
     {
+        Storage::disk('public')->delete($notification->image);
         $notification->delete();
         return back()->with('error','E\'lon O`chirildi');
     }

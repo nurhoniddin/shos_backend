@@ -110,6 +110,7 @@ class GcategoryController extends Controller
      */
     public function destroy(Gcategory $gcategory)
     {
+        Storage::disk('public')->delete($gcategory->image);
         $gcategory->delete();
         return back()->with('error','Kategory O`chirildi');
     }
