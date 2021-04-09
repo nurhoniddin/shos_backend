@@ -28,24 +28,24 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-//Route::group(['middleware' => 'auth','prefix'=>'admin'],function (){
-//
-//});
+Route::group(['middleware' => 'auth'],function (){
+    Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::resource('category',CategoryController::class);
+    Route::resource('posts',PostController::class);
+    Route::resource('videos',VideoController::class);
+    Route::resource('gcategory',GcategoryController::class);
+    Route::resource('gallery',GalleryController::class);
+    Route::post('ckeditor/image_upload', CKEditorController::class)->name('upload');
+    Route::resource('event',EventController::class);
+    Route::resource('notification',NotificationController::class);
+    Route::resource('staff',StaffController::class);
+    Route::resource('management',\App\Http\Controllers\ManagementController::class);
+    Route::resource('calendar',CalendarController::class);
+    Route::resource('word',WordController::class);
+});
 
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('category',CategoryController::class);
-Route::resource('posts',PostController::class);
-Route::resource('videos',VideoController::class);
-Route::resource('gcategory',GcategoryController::class);
-Route::resource('gallery',GalleryController::class);
-Route::post('ckeditor/image_upload', CKEditorController::class)->name('upload');
-Route::resource('event',EventController::class);
-Route::resource('notification',NotificationController::class);
-Route::resource('staff',StaffController::class);
-Route::resource('management',\App\Http\Controllers\ManagementController::class);
-Route::resource('calendar',CalendarController::class);
-Route::resource('word',WordController::class);
+
 

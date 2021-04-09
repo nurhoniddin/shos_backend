@@ -26,7 +26,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <a class="btn btn-primary" href="{{ route('category.create') }}">Yangi Kategoriya Qo'shish</a>
+                                <a class="btn btn-primary" href="{{ route('category.create') }}"><i class="fa fa-plus"></i></a>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">

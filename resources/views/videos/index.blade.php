@@ -26,7 +26,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <a class="btn btn-primary" href="{{ route('videos.create') }}">Yangi Video Qo'shish</a>
+                                <a class="btn btn-primary" href="{{ route('videos.create') }}"><i class="fa fa-plus"></i></a>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
