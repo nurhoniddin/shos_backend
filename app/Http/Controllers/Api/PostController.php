@@ -16,7 +16,8 @@ class PostController extends Controller
     public function details($id)
     {
         $details = Post::where('id',$id)->first();
-
+//        $postviews = Post::where('id', $id )->first();
+        $details->increment('views_count', + 1);
         return response()->json(compact('details'));
     }
 

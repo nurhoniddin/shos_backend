@@ -29,6 +29,7 @@ class CreatePostsTable extends Migration
             $table->text('body_en')->nullable();
             $table->string('image');
             $table->foreignId('category_id')->constrained('categories');
+            $table->integer('views_count')->default(0);
             $table->timestamps();
         });
     }
