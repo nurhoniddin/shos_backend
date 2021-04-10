@@ -18,48 +18,46 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route Calendars All
+// Route Calendars All   
 Route::get('/calendar', [\App\Http\Controllers\Api\CalendarController::class,'index'])->name('calendar');
 
-
-// Route Event  All
-Route::get('/event', [\App\Http\Controllers\Api\EventController::class,'index'])->name('event');
-
-// Route Management  All
-
-Route::get('/event', [\App\Http\Controllers\Api\EventController::class,'index']);
-//event single
-Route::get('/event/{id}', [\App\Http\Controllers\Api\EventController::class,'single_event']);
+// Route Management  All   // Boshqaruv
 Route::get('/manage', [\App\Http\Controllers\Api\ManagementController::class,'index'])->name('management');
 
-// Route Staff  All
+// Route Event  All  // Tadbirlar barchasi 
+Route::get('/event', [\App\Http\Controllers\Api\EventController::class,'index']);
+//event single  // Tadbirlar id bilan dittasi
+Route::get('/event/{id}', [\App\Http\Controllers\Api\EventController::class,'single_event']);
+
+
+// Route Staff  All   // Xodimlar
 Route::get('/staff', [\App\Http\Controllers\Api\StaffController::class,'index'])->name('staff');
 
-// Route Video  All
+// Route Video  All  // Video yangiliklar
 Route::get('/video', [\App\Http\Controllers\Api\VideoController::class,'index'])->name('video');
 
-// Route Gallery  All
+// Route Gallery  All // Gallery barchasi
 Route::get('/gallery', [\App\Http\Controllers\Api\GalleryController::class,'index'])->name('gallery');
-
-// Route Gallery Category_id All
+// Route Gallery Category_id All // Gallery kategory id bilan
 Route::get('/gallery/{gcategory_id}', [\App\Http\Controllers\Api\GalleryController::class,'gallerys']);
 
-// Route Gallery Category All
+// Route Gallery Category All // Gallery kategory
 Route::get('/gcategory', [\App\Http\Controllers\Api\GcategoryController::class,'index'])->name('gcategory');
 
-// Route Category All
+// Route Category All // kategoriyalar
 Route::get('/category', [\App\Http\Controllers\Api\CategoryController::class,'index'])->name('category');
 
-// Route Post All
+// Route Post All  // Yangiliklar
 Route::get('/post', [\App\Http\Controllers\Api\PostController::class,'index'])->name('post');
-// Route Post Details
+// Route Post Details // Yangiliklar id bilan
 Route::get('/post/{id}', [\App\Http\Controllers\Api\PostController::class,'details']);
-// Route Post Category_id All
+// Route Post Category_id All // Yangiliklar kategory id bilan
 Route::get('/posts/{category_id}', [\App\Http\Controllers\Api\PostController::class,'posts']);
 
-// Route Notification All
+// Route Notification All  // Elonlar barchasi
 Route::get('/notification', [\App\Http\Controllers\Api\NotificationController::class,'index'])->name('notification');
-Route::get('/notification', [\App\Http\Controllers\Api\NotificationController::class,'index']);
+// Route Notification Details // Elonlar id bilan
 Route::get('/notification/{id}', [\App\Http\Controllers\Api\NotificationController::class,'single_notification']);
 
-
+// Route Word // Hikmatli sozlar
+Route::get('/word', [\App\Http\Controllers\Api\WordController::class,'index']);
