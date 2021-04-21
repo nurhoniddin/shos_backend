@@ -15,7 +15,10 @@ class CreateGcategoriesTable extends Migration
     {
         Schema::create('gcategories', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
+            $table->string('name_uz')->nullable();
+            $table->string('name_ru')->nullable();
+            $table->string('name_cyril')->nullable();
+            $table->string('name_en')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
         });

@@ -18,13 +18,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route Calendars All   
+// Route Calendars All
 Route::get('/calendar', [\App\Http\Controllers\Api\CalendarController::class,'index'])->name('calendar');
 
 // Route Management  All   // Boshqaruv
 Route::get('/manage', [\App\Http\Controllers\Api\ManagementController::class,'index'])->name('management');
 
-// Route Event  All  // Tadbirlar barchasi 
+// Route Event  All  // Tadbirlar barchasi
 Route::get('/event', [\App\Http\Controllers\Api\EventController::class,'index']);
 //event single  // Tadbirlar id bilan dittasi
 Route::get('/event/{id}', [\App\Http\Controllers\Api\EventController::class,'single_event']);
@@ -53,6 +53,8 @@ Route::get('/post', [\App\Http\Controllers\Api\PostController::class,'index'])->
 Route::get('/post/{id}', [\App\Http\Controllers\Api\PostController::class,'details']);
 // Route Post Category_id All // Yangiliklar kategory id bilan
 Route::get('/posts/{category_id}', [\App\Http\Controllers\Api\PostController::class,'posts']);
+// Route Post count // kop korilganlar
+Route::get('/count', [\App\Http\Controllers\Api\PostController::class,'count']);
 
 // Route Notification All  // Elonlar barchasi
 Route::get('/notification', [\App\Http\Controllers\Api\NotificationController::class,'index'])->name('notification');

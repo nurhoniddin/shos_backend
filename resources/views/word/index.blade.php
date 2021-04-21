@@ -66,7 +66,9 @@
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer clearfix">
-                                {{ $word->links() }}
+                                <nav aria-label="Page navigation example">
+                                    {{$word->links("pagination::bootstrap-4")}}
+                                </nav>
                             </div>
                         </div>
                     </div>

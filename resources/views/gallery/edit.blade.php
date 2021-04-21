@@ -33,7 +33,7 @@
                                 <form action="{{ route('gcategory.update',$gcategory->id) }}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
-                                    <input type="text" name="name" value="{{ $gcategory->name }}" class="form-control" required="">
+                                    <input type="text" name="name" value="{{ $gcategory->name_uz }}" class="form-control" required="">
                                     <hr>
                                     <input type="file" name="image" class="form-control" required="">
                                     <button type="submit" class="btn btn-primary mt-3" >Saqlash</button>

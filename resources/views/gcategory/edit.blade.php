@@ -33,9 +33,16 @@
                                 <form action="{{ route('gcategory.update',$gcategory->id) }}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
-                                    <input type="text" name="name" value="{{ $gcategory->name }}" class="form-control" required="">
+                                    <input type="text" name="name_uz" value="{{ $gcategory->name_uz }}" class="form-control" required="">
+                                    <hr>
+                                    <input type="text" name="name_cyril" value="{{ $gcategory->name_cyril }}" class="form-control" required="">
+                                    <hr>
+                                    <input type="text" name="name_ru" value="{{ $gcategory->name_ru }}" class="form-control" required="">
+                                    <hr>
+                                    <input type="text" name="name_en" value="{{ $gcategory->name_en }}" class="form-control" required="">
                                     <hr>
                                     <input type="file" name="image" class="form-control" required="">
+                                    <hr>
                                     <button type="submit" class="btn btn-primary mt-3" >Saqlash</button>
                                 </form>
                             </div>

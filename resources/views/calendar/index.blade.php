@@ -72,7 +72,9 @@
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer clearfix">
-                                {{ $calendar->links() }}
+                                <nav aria-label="Page navigation example">
+                                    {{$calendar->links("pagination::bootstrap-4")}}
+                                </nav>
                             </div>
                         </div>
                     </div>

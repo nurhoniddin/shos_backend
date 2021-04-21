@@ -49,7 +49,7 @@
                                     @foreach($gcategory as $gcategorys)
                                         <tr>
                                             <td>{{ $gcategorys->id }}</td>
-                                            <td>{{ $gcategorys->name }}</td>
+                                            <td>{{ $gcategorys->name_uz }}</td>
                                             <td>
                                                 <img src="storage/{{ $gcategorys->image }}" style="width: 150px">
                                             </td>
@@ -68,7 +68,9 @@
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer clearfix">
-                                {{ $gcategory->links() }}
+                                <nav aria-label="Page navigation example">
+                                    {{$gcategory->links("pagination::bootstrap-4")}}
+                                </nav>
                             </div>
                         </div>
                     </div>

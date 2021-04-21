@@ -32,7 +32,13 @@
                             <div class="card-body">
                                 <form action="{{ route('gcategory.store') }}" method="post" enctype="multipart/form-data">
                                     @csrf
-                                    <input type="text" name="name" class="form-control" placeholder="name">
+                                    <input type="text" name="name_uz" class="form-control" placeholder="name uz">
+                                    <hr>
+                                    <input type="text" name="name_cyril" class="form-control" placeholder="name kiril">
+                                    <hr>
+                                    <input type="text" name="name_ru" class="form-control" placeholder="name ru">
+                                    <hr>
+                                    <input type="text" name="name_en" class="form-control" placeholder="name en">
                                     <hr>
                                     <input type="file" name="image" class="form-control" >
                                     <button type="submit" class="btn btn-primary mt-3" >Saqlash</button>

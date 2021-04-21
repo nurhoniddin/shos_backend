@@ -40,6 +40,7 @@
                                     <thead>
                                     <tr>
                                         <th style="width: 10px">#</th>
+                                        <th>kategoriya nomi</th>
                                         <th>nomi</th>
                                         <th>qisqacha ma'lumot</th>
                                         <th>to'liq ma'lumot</th>
@@ -50,6 +51,7 @@
                                     @foreach($posts as $post)
                                         <tr>
                                             <td>{{ $post->id }}</td>
+                                            <td>{{ $post->category->name_uz }}</td>
                                             <td>{{ $post->title_uz }}</td>
                                             <td>{{ $post->description_uz }}</td>
                                             <td>{!! $post->body_uz !!}</td>
@@ -68,7 +70,9 @@
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer clearfix">
-                                {{ $posts->links() }}
+                                <nav aria-label="Page navigation example">
+                                    {{$posts->links("pagination::bootstrap-4")}}
+                                </nav>
                             </div>
                         </div>
                     </div>

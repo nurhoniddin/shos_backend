@@ -35,7 +35,7 @@
                                     <select class="custom-select" id="inputGroupSelect03" name="category_id" required>
                                     <option value="">kategoriya...</option>
                                     @foreach($gallery as $gallerys)
-                                    <option value="{{ $gallerys->id }}">{{ $gallerys->name }}</option>
+                                    <option value="{{ $gallerys->id }}">{{ $gallerys->name_uz }}</option>
                                     @endforeach
                                     </select>
                                     <hr>

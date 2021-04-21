@@ -27,4 +27,11 @@ class PostController extends Controller
 
         return response()->json(compact('details'));
     }
+
+    public function count()
+    {
+        $count = Post::orderBy('views_count','DESC')->get();
+
+        return response()->json(compact('count'));
+    }
 }

@@ -16,7 +16,7 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        $gallery = Gallery::paginate(10);
+        $gallery = Gallery::with('gcategory')->paginate(10);
         return view('gallery.index', compact('gallery'));
     }
 
@@ -47,7 +47,8 @@ class GalleryController extends Controller
                 $path = $file->store('gallery', 'public');
                 // $name = $file->getClientOriginalName();
 
-                $insert[$key]['gallery_categories'] = $request->input('category_id');
+                $insert[$key]['gcategory_id'] = $request->input('category_id');
+                $insert[$key]['created_at'] = date('Y-m-d H:i:s');
                 $insert[$key]['image'] = $path;
 
             }

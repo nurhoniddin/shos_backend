@@ -76,7 +76,9 @@
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer clearfix">
-                                {{ $manages->links() }}
+                                <nav aria-label="Page navigation example">
+                                    {{$manages->links("pagination::bootstrap-4")}}
+                                </nav>
                             </div>
                         </div>
                     </div>

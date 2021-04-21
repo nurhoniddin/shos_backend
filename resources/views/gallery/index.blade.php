@@ -49,7 +49,7 @@
                                     @foreach($gallery as $gallerys)
                                         <tr>
                                             <td>{{ $gallerys->id }}</td>
-                                            <td>{{ $gallerys->gallery_categories }}</td>
+                                            <td>{{ $gallerys->gcategory->name_uz }}</td>
                                             <td>
                                                 <img src="storage/{{ $gallerys->image }}" style="width: 150px">
                                             </td>
@@ -67,7 +67,9 @@
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer clearfix">
-                                {{ $gallery->links() }}
+                                <nav aria-label="Page navigation example">
+                                    {{$gallery->links("pagination::bootstrap-4")}}
+                                </nav>
                             </div>
                         </div>
                     </div>

@@ -70,7 +70,9 @@
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer clearfix">
-                                {{ $cats->links() }}
+                                <nav aria-label="Page navigation example">
+                                    {{$cats->links("pagination::bootstrap-4")}}
+                                </nav>
                             </div>
                         </div>
                     </div>

@@ -14,7 +14,7 @@ class GcategoryController extends Controller
      */
     public function index()
     {
-        $gcategory = Gcategory::paginate(10);
+        $gcategory = Gcategory::with('gallery')->paginate(10);
         return view('gcategory.index', compact('gcategory'));
     }
 
@@ -38,7 +38,10 @@ class GcategoryController extends Controller
     {
          $data = new Gcategory();
 
-         $data->name  = $request->input('name');
+         $data->name_uz  = $request->input('name_uz');
+        $data->name_cyril  = $request->input('name_cyril');
+        $data->name_ru  = $request->input('name_ru');
+        $data->name_en  = $request->input('name_en');
 
          // $data->image  = $request->input('image');
          $imagePath = request('image')->store('gcategory','public');
@@ -95,7 +98,10 @@ class GcategoryController extends Controller
             $post->image = $path;
         }
 
-        $post->name  = $request->input('name');
+        $post->name_uz  = $request->input('name_uz');
+        $post->name_cyril  = $request->input('name_cyril');
+        $post->name_ru  = $request->input('name_ru');
+        $post->name_en  = $request->input('name_en');
         $post->save();
 
         return redirect()->route('gcategory.index')
