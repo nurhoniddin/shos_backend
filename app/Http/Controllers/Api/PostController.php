@@ -34,4 +34,19 @@ class PostController extends Controller
 
         return response()->json(compact('count'));
     }
+
+    public function search(Request $request)
+    {
+        $search = $request->input('name');
+        $search_post = Post::where('title_uz','like','%'.$search.'%')
+            ->orwhere('title_cyril','like','%'.$search.'%')
+            ->orwhere('title_ru','like','%'.$search.'%')
+            ->orwhere('title_en','like','%'.$search.'%')
+            ->orwhere('description_uz','like','%'.$search.'%')
+            ->orwhere('description_cyril','like','%'.$search.'%')
+            ->orwhere('description_ru','like','%'.$search.'%')
+            ->orwhere('description_en','like','%'.$search.'%')->get();
+
+        return response()->json(compact('search_post'));
+    }
 }

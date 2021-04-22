@@ -55,6 +55,8 @@ Route::get('/post/{id}', [\App\Http\Controllers\Api\PostController::class,'detai
 Route::get('/posts/{category_id}', [\App\Http\Controllers\Api\PostController::class,'posts']);
 // Route Post count // kop korilganlar
 Route::get('/count', [\App\Http\Controllers\Api\PostController::class,'count']);
+// Route Post search // yangiliklarni qidirish
+Route::post('/search', [\App\Http\Controllers\Api\PostController::class,'search']);
 
 // Route Notification All  // Elonlar barchasi
 Route::get('/notification', [\App\Http\Controllers\Api\NotificationController::class,'index'])->name('notification');
