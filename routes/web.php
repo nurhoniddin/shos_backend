@@ -48,5 +48,11 @@ Route::group(['middleware' => 'auth'],function (){
 
 Auth::routes();
 
-
+ Route::get('/foo', function () {
+ // Artisan::call('storage:link');
+ $targetFolder = $_SERVER['DOCUMENT_ROOT'].'/storage/app/public';
+ $linkFolder = $_SERVER['DOCUMENT_ROOT'].'/public/storage';
+ symlink($targetFolder,$linkFolder);
+ echo 'Symlink process successfully completed';
+ });
 
