@@ -16,7 +16,7 @@ class GalleryController extends Controller
 
     public function gallerys($gcategory_id)
     {
-        $details = Gallery::where('gallery_categories',$gcategory_id)->get();
+        $details = Gallery::where('gcategory_id',$gcategory_id)->get();
 
         return response()->json(compact('details'));
     }
